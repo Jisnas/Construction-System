@@ -1,0 +1,103 @@
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: url('b4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    border: 10px solid white; /* Border around the background */
+    box-sizing: border-box;
+    padding-left: 10%;
+}
+
+/* Main Container */
+.container {
+    background: rgba(0, 0, 0, 0.8); /* Darker background for contrast */
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
+    width: 500px;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Increased spacing between buttons */
+}
+
+/* Modern Button Styling */
+.btn {
+    padding: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff6b6b, #ff4757);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(255, 71, 87, 0.5);
+    width: 100%;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effects - Glowing Edge */
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 15px 30px rgba(255, 71, 87, 0.7);
+    background: linear-gradient(135deg, #ff4757, #e84118);
+}
+
+/* Button Click Effect */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Neon Glow Effect */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff4757, #ff6b6b, #ff4757);
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+/* Button Shine Animation */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 400%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.btn:hover::after {
+    opacity: 1;
+    width: 140%;
+    height: 600%;
+}
